@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".question1">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" android:layout_margin="20dp" tools:layout_editor_absoluteY="10dp"
+            tools:layout_editor_absoluteX="10dp">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/NumQuestion" android:text="Pregunta #"
+                android:textSize="24sp"/>
+        <TextView
+                android:text="¿Pregunta?"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/QuestionName" android:textSize="30sp"/>
+        <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="108dp" android:id="@+id/rdbGroup1">
+            <RadioButton
+                    android:text="New RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/rdbOpcion1"/>
+            <RadioButton
+                    android:text="New RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/rdbOpcion2"/>
+            <RadioButton
+                    android:text="New RadioButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/rdbOpcion3"/>
+        </RadioGroup>
+        <Button
+                android:text="Siguiente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/btnNext"/>
+        <Button
+                android:text="Salir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/btnOut"/>
+        <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/Count" android:visibility="invisible"/>
+        <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/Points" android:visibility="invisible"/>
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <TextView
+                    android:text="Roberto Esau Perdomo Aragon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:id="@+id/textView3" android:layout_weight="1"/>
+            <TextView
+                    android:text="29-4645-2013"
+                    android:layout_width="152dp"
+                    android:layout_height="wrap_content" android:id="@+id/textView4"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
