@@ -13,9 +13,10 @@ import java.util.List;
 
 public class question1 extends AppCompatActivity {
 
+    // inicializamos una lista de preguntas
     private List<ModelQuestion> ListQuestions = new ArrayList<ModelQuestion>();
 
-    // creando objetos
+    // creando objetos para asignar los que usaremos en la lista
     RadioGroup rdbGroup1;
     RadioButton rdtQuestion1, rdtQuestion2, rdtQuestion3,rdtAnswerd;
     TextView NameQuestion, NumQuestion,CountView,SumPoint;
@@ -26,31 +27,34 @@ public class question1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question1);
 
-        // llenamos la lista statica;
+        // Asignamos data a la lista creada
         AsignarList();
 
         //asignacion de objetos de la vista
+        //Radiobuttons
         rdbGroup1 = (RadioGroup) findViewById(R.id.rdbGroup1);
         rdtQuestion1 = (RadioButton) findViewById(R.id.rdbOpcion1);
         rdtQuestion2 = (RadioButton) findViewById(R.id.rdbOpcion2);
         rdtQuestion3 = (RadioButton) findViewById(R.id.rdbOpcion3);
 
+        //TextView
         NameQuestion = (TextView) findViewById(R.id.QuestionName);
         NumQuestion = (TextView) findViewById(R.id.NumQuestion);
         CountView = (TextView) findViewById(R.id.Count);
         SumPoint = (TextView) findViewById(R.id.Points);
 
+        //Buttons
         Nextquestion = (Button) findViewById(R.id.btnNext);
         OutApp = (Button) findViewById(R.id.btnOut);
 
-        AsignarPregunta(0);
+        //Inicializar con la primer pregunta
+        AsignarPregunta(Integer.parseInt(CountView.getText().toString()));
 
         Nextquestion.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 SumarPuntos();
             }
         });
-
         OutApp.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v){
                 System.exit(0);
@@ -59,6 +63,7 @@ public class question1 extends AppCompatActivity {
 
     }
 
+    // Metodo encargado de mostrar las preguntas en pantalla y hacer evalucion final
     private void AsignarPregunta(int PreguntaActual)
     {
         String Estado = "Aprobado";
@@ -95,6 +100,7 @@ public class question1 extends AppCompatActivity {
 
     }
 
+    // Método encargado de evaluar la puntuacion de las preguntas
     private void SumarPuntos()
     {
         int valorCorrecto = 2;
@@ -115,14 +121,13 @@ public class question1 extends AppCompatActivity {
                 SumPoint.setText(Integer.toString(ActualPoint));
             }
             rdtAnswerd.setChecked(false);
+            AsignarPregunta(PreguntaActual);
         }else{
             Toast.makeText(this, "Por favor seleccione una respuesta", Toast.LENGTH_LONG).show();
         }
-
-        AsignarPregunta(PreguntaActual);
     }
 
-
+    // Método encargado de asignar data de las preguntas
     private void AsignarList()
     {
         ModelQuestion Pregunta1 = new ModelQuestion();

@@ -1,6 +1,6 @@
 package com.example.ejercicio1evaluacion2.Model;
 
-
+// Modelo creado para guardar informacion de las preguntas
 public class ModelQuestion {
     private int Idquestion;
     private int Numberquestion;
